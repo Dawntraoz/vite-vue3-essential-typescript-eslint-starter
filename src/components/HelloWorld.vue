@@ -1,12 +1,3 @@
-<script setup lang="ts">
-import { useStore } from 'vuex';
-import { key } from '../store';
-
-defineProps<{ msg: string }>();
-
-const store = useStore(key);
-</script>
-
 <template>
   <h1>{{ msg }}</h1>
 
@@ -48,20 +39,25 @@ const store = useStore(key);
   </p>
 </template>
 
+<script setup lang="ts">
+import { useStore } from 'vuex';
+import { key } from '../store';
+
+defineProps<{ msg: string }>();
+
+const store = useStore(key);
+</script>
+
 <style scoped>
 a {
-  color: #42b983;
+  @apply text-green-500;
 }
 
 label {
-  margin: 0 0.5em;
-  font-weight: bold;
+  @apply mx-2 font-bold;
 }
 
 code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
+  @apply bg-gray-200 py-1 px-2 rounded text-gray-700;
 }
 </style>
